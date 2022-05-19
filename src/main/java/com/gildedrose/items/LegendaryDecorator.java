@@ -13,11 +13,16 @@ public class LegendaryDecorator extends UpdateableItem {
     public void updateQuality() {
         int beforeSellIn = sellIn;
         int beforeQuality = quality;
-        this.decoratedItem.updateQuality();
-        this.decoratedItem.sellIn = Math.max(beforeSellIn, this.decoratedItem.sellIn);
-        this.decoratedItem.quality = Math.max(beforeQuality, this.decoratedItem.quality);
 
-        this.quality = decoratedItem.quality;
-        this.sellIn = decoratedItem.sellIn;
+        this.decoratedItem.updateQuality();
+
+        // A legendary item, never has to be sold or decreases in Quality
+        this.decoratedItem.sellIn = Math.max(beforeSellIn, this.decoratedItem.sellIn); // If the sellin is postponed,
+                                                                                       // update the value
+        this.decoratedItem.quality = Math.max(beforeQuality, this.decoratedItem.quality); // It can still increase in
+                                                                                          // quality
+
+        this.quality = decoratedItem.quality; // This is why we need get/set methods...
+        this.sellIn = decoratedItem.sellIn; // This is why we need get/set methods...
     }
 }

@@ -3,7 +3,7 @@ package com.gildedrose;
 import com.gildedrose.items.UpdateableItem;
 
 public class GildedRoseMain {
-    
+
     public static void main(String[] args) {
 
         ItemFactory itemFactory = new ItemFactory();
@@ -11,7 +11,7 @@ public class GildedRoseMain {
         UpdateableItem item2 = itemFactory.createItem("Aged Brie", 2, 0);
         UpdateableItem item3 = itemFactory.createItem("Sulfaras", 0, 0);
 
-        Item[] items = new Item[]{item1, item2};
+        Item[] items = new Item[] { item1, item2, item3 };
         GildedRose app = new GildedRose(items);
 
         int days = 4;

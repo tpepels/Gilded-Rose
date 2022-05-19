@@ -12,10 +12,14 @@ public class ConjuredDecorator extends UpdateableItem {
     public void updateQuality() {
         int qualityBefore = this.decoratedItem.quality;
         this.decoratedItem.updateQuality();
+
+        // "Conjured" items degrade in Quality twice as fast as normal items
+        // So, apply a reduction in quality twice
         int qualityDifference = Math.max(0, qualityBefore - decoratedItem.quality);
+
         this.decoratedItem.quality -= qualityDifference;
 
-        this.quality = decoratedItem.quality;
-        this.sellIn = decoratedItem.sellIn;
+        this.quality = decoratedItem.quality; // This is why we need get/set methods...
+        this.sellIn = decoratedItem.sellIn; // This is why we need get/set methods...
     }
 }

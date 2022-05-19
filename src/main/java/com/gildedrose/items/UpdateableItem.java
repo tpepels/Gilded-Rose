@@ -8,11 +8,13 @@ public class UpdateableItem extends Item {
     }
 
     public void updateQuality() {
+        sellIn = Math.max(0, sellIn - 1);
+
         int qualityUpdate = 1;
-        if (sellIn < 0) {
+        if (sellIn < 0) { // Once the sell by date has passed, Quality degrades twice as fast
             qualityUpdate = 2;
         }
+
         quality = Math.max(0, quality - qualityUpdate);
     }
-
 }

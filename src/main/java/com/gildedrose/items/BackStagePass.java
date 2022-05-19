@@ -8,6 +8,18 @@ public class BackStagePass extends UpdateableItem {
 
     @Override
     public void updateQuality() {
+
+        if (sellIn == 0) {
+
+            // Quality drops to 0 after the concert
+            quality = 0;
+            return;
+        }
+
+        sellIn = Math.max(0, sellIn - 1);
+
+        // Quality increases by 2 when there are 10 days or less and by 3 when there are
+        // 5 days or less but
         int qualityUpdate = 1;
         if (sellIn < 5) {
             qualityUpdate = 3;

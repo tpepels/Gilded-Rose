@@ -9,6 +9,8 @@ public class IncreasingQualityItem extends UpdateableItem {
 
     @Override
     public void updateQuality() {
+        sellIn = Math.max(0, sellIn - 1);
+        // The Quality of an item is never more than 50
         quality = Math.min(50, quality + 1);
     }
 }
