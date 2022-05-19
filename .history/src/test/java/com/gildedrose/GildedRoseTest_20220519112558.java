@@ -25,11 +25,7 @@ class GildedRoseTest {
 
         for (int i = 1; i <= 12; i++) {
             gildedRose.updateQuality();
-
-            if (testItems[0].sellIn > 10)
-                assertEquals(20 - i, testItems[0].quality);
-            else
-                assertEquals(10 - (i - 10) * 2, testItems[0].quality);
+            assertEquals(20 - i, testItems[0].quality);
             assertEquals(Math.max(0, 10 - i), testItems[0].sellIn);
         }
     }
