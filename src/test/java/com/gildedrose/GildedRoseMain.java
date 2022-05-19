@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import com.gildedrose.items.UpdateableItem;
 
-public class TexttestFixture {
+public class GildedRoseMain {
     
     public static void main(String[] args) {
 
@@ -12,7 +12,7 @@ public class TexttestFixture {
         UpdateableItem item3 = itemFactory.createItem("Sulfaras", 0, 0);
 
         Item[] items = new Item[]{item1, item2};
-        GildedRose app = new GildedRose(items));
+        GildedRose app = new GildedRose(items);
 
         int days = 4;
 
